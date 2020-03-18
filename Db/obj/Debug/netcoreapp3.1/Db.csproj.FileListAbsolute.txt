@@ -1,0 +1,4 @@
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Db\bin\Debug\netcoreapp3.1\Db.exe
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Db\obj\Debug\netcoreapp3.1\Db.csprojAssemblyReference.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Db\obj\Debug\netcoreapp3.1\Db.AssemblyInfoInputs.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Db\obj\Debug\netcoreapp3.1\Db.AssemblyInfo.cs
