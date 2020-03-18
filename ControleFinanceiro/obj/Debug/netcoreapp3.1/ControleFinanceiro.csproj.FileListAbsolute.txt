@@ -1,0 +1,13 @@
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\ControleFinanceiro.exe
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\ControleFinanceiro.deps.json
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\ControleFinanceiro.runtimeconfig.json
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\ControleFinanceiro.runtimeconfig.dev.json
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\ControleFinanceiro.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\ControleFinanceiro.pdb
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.csprojAssemblyReference.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.csproj.CoreCompileInputs.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.AssemblyInfoInputs.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.AssemblyInfo.cs
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.pdb
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.genruntimeconfig.cache
