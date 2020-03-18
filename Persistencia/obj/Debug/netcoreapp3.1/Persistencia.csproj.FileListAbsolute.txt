@@ -1,0 +1,5 @@
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Persistencia\bin\Debug\netcoreapp3.1\Db.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Persistencia\bin\Debug\netcoreapp3.1\Modelo.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csprojAssemblyReference.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.AssemblyInfoInputs.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.AssemblyInfo.cs
