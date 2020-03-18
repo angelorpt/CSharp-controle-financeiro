@@ -1,0 +1,4 @@
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Modelo\bin\Debug\netcoreapp3.1\Modelo.exe
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Modelo\obj\Debug\netcoreapp3.1\Modelo.csprojAssemblyReference.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Modelo\obj\Debug\netcoreapp3.1\Modelo.AssemblyInfoInputs.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\Modelo\obj\Debug\netcoreapp3.1\Modelo.AssemblyInfo.cs
