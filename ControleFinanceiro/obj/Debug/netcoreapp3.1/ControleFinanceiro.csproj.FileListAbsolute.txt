@@ -10,3 +10,11 @@ C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug
 C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.dll
 C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.pdb
 C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.genruntimeconfig.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.csproj.CoreCompileInputs.cache
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.csproj.CopyComplete

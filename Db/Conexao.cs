@@ -2,7 +2,7 @@
 
 namespace Db
 {
-    class Conexao
+    public class Conexao
     {
         private static readonly string server   = "LAPTOP-B2ADTHUP\\SQLEXPRESS";
         private static readonly string database = "SoN_Financeiro";
