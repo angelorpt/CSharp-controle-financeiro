@@ -60,11 +60,11 @@ namespace ControleFinanceiro
 
                             p.contas = p.conta.ListarTodos();
 
-                            ConsoleTable table = new ConsoleTable("ID", "Descrição", "Tipo", "Valor");
+                            ConsoleTable table = new ConsoleTable("ID", "Descrição", "Tipo", "Valor", "Data Vencimento");
 
                             foreach (var c in p.contas)
                             {
-                                table.AddRow(c.Id, c.Descricao, c.Tipo.Equals('R') ? "Receber" : "Pagar", string.Format("{0:c}", c.Valor));
+                                table.AddRow(c.Id, c.Descricao, c.Tipo.Equals('R') ? "Receber" : "Pagar", string.Format("{0:c}", c.Valor), string.Format("{0:dd/MM/yyyy}", c.DataVencimento));
                             }
                             table.Write();
                             ReadLine();
@@ -140,15 +140,29 @@ namespace ControleFinanceiro
                             break;
 
                         case 3:
-                            Write("Editar");
+                            Title = "EDITAR CONTA - CONTROLE FINANCEIRO";
+                            Uteis.MontaHeader("EDITAR CONTA");
+
+                            ReadLine();
+                            Clear();
                             break;
 
                         case 4:
-                            Write("Excluir");
+                            Title = "EXCLUIR CONTA - CONTROLE FINANCEIRO";
+                            Uteis.MontaHeader("EXCLUIR CONTA");
+
+                            ReadLine();
+                            Clear();
                             break;
 
                         case 5:
-                            Write("Relatório");
+                            Title = "RELATÓRIO - CONTROLE FINANCEIRO";
+                            Uteis.MontaHeader("RELATÓRIO");
+
+
+
+                            ReadLine();
+                            Clear();
                             break;
                     }
                 }
