@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Data.SqlClient;
-using ModelCategoria = Modelo.Categoria;
+using Modelo;
 
 namespace Persistencia
 {
-    class Categoria
+    public class CategoriaDAL
     {
         private SqlConnection conn;
 
-        public Categoria (SqlConnection conn)
+        public CategoriaDAL (SqlConnection conn)
         {
             this.conn = conn;
         }
 
-        public ModelCategoria GetCategoria(int id)
+        public Categoria GetCategoria(int id)
         {
-            ModelCategoria categoria = new ModelCategoria();
+            Categoria categoria = new Categoria();
 
             string SQL;
-            SQL = "SELECT ID, NOME FROM CATEGORIA WHERE ID = @id";
+            SQL = "SELECT ID, NOME FROM CATEGORIAS WHERE ID = @id";
             var cmd = new SqlCommand(SQL, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
 

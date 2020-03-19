@@ -6,16 +6,16 @@ using Modelo;
 
 namespace Persistencia
 {
-    class ContaDAL
+    public class ContaDAL
     {
         private SqlConnection conn;
-        private Categoria categoria;
+        private CategoriaDAL categoria;
 
         public ContaDAL(SqlConnection conn)
         {
             this.conn = conn;
             string strConn = Db.Conexao.GetStringConnection();
-            this.categoria = new Categoria(new SqlConnection(strConn));
+            this.categoria = new CategoriaDAL(new SqlConnection(strConn));
         }
 
         public List<Conta> ListarTodos()
@@ -23,9 +23,9 @@ namespace Persistencia
             List<Conta> contas = new List<Conta>();
 
             string SQL;
-            SQL  = "SELECT CON.ID, CON.DESCRICAO, CON.VALOR, CON.TIPO, CON.DATA_VENCIMENTO, CAT.NOME, CAT.ID AS CATEGORIA_ID ";
-            SQL += "FROM CONTAS CON";
-            SQL += "INNER JOIN CATEGORIAS CAT ON CON.CATEGORIA_ID = CAT.ID; ";
+            SQL  = " SELECT CON.ID, CON.DESCRICAO, CON.VALOR, CON.TIPO, CON.DATA_VENCIMENTO, CAT.NOME, CAT.ID AS CATEGORIA_ID ";
+            SQL += " FROM CONTAS CON ";
+            SQL += " INNER JOIN CATEGORIAS CAT ON CON.CATEGORIA_ID = CAT.ID";
 
             var cmd = new SqlCommand(SQL, this.conn);
             
@@ -37,10 +37,11 @@ namespace Persistencia
                 {
                     Conta conta = new Conta()
                     {
-                        Id        = Convert.ToInt32(dr["id"].ToString()),
-                        Descricao = dr["id"].ToString(),
-                        Tipo      = Convert.ToChar(dr["id"].ToString()),
-                        Valor     = Convert.ToDouble(dr["id"].ToString())
+                        Id        = Convert.ToInt32(dr["ID"].ToString()),
+                        Descricao = dr["DESCRICAO"].ToString(),
+                        // Tipo      = Convert.ToChar(dr["TIPO"].ToString()),
+                        Tipo = 'R',
+                        Valor     = Convert.ToDouble(dr["VALOR"].ToString())
                     };
 
                     int id_categoria = Convert.ToInt32(dr["id"].ToString());
@@ -48,6 +49,8 @@ namespace Persistencia
                     contas.Add(conta);
                 }
             }
+            
+            this.conn.Close();
 
             return contas;
 

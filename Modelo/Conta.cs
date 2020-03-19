@@ -18,7 +18,7 @@ namespace Modelo
         public char Tipo
         {
             get => _tipo;
-            set => _tipo = !value.Equals("P") && !value.Equals("R") ? throw new Exception("Use P para PAGAR e R para RECEBER") : value;
+            set => _tipo = !value.Equals('P') && !value.Equals('R') ? throw new Exception("Use P para PAGAR ou R para RECEBER") : value;
         }
 
         public DateTime DataVencimento { get; set; }
