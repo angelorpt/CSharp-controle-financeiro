@@ -18,17 +18,30 @@ namespace Persistencia
             this.categoria = new CategoriaDAL(new SqlConnection(strConn));
         }
 
-        public List<Conta> ListarTodos()
+        public List<Conta> ListarTodos(string data_inicial = "", string data_final = "")
         {
             List<Conta> contas = new List<Conta>();
 
-            string SQL;
-            SQL  = " SELECT CON.ID, CON.DESCRICAO, CON.VALOR, CON.TIPO, CON.DATA_VENCIMENTO, CAT.NOME, CAT.ID AS CATEGORIA_ID ";
-            SQL += " FROM CONTAS CON ";
-            SQL += " INNER JOIN CATEGORIAS CAT ON CON.CATEGORIA_ID = CAT.ID";
+            StringBuilder SQL = new StringBuilder("");
 
-            var cmd = new SqlCommand(SQL, this.conn);
+            SQL.Append(" SELECT CON.ID, CON.DESCRICAO, CON.VALOR, CON.TIPO, CON.DATA_VENCIMENTO, CAT.NOME, CAT.ID AS CATEGORIA_ID ");
+            SQL.Append(" FROM CONTAS CON ");
+            SQL.Append(" INNER JOIN CATEGORIAS CAT ON CON.CATEGORIA_ID = CAT.ID");
             
+
+            if (!data_inicial.Equals("") && !data_final.Equals(""))
+            {
+                SQL.Append(" CON.DATA_VENCIMENTO BETWEEN @data_ini AND @data_fim");
+            }
+
+            var cmd = new SqlCommand(SQL.ToString(), this.conn);
+
+            if (!data_inicial.Equals("") && !data_final.Equals(""))
+            {
+                cmd.Parameters.AddWithValue("@data_ini", data_inicial);
+                cmd.Parameters.AddWithValue("@data_fim", data_final);
+            }
+
             this.conn.Open();
 
             using (SqlDataReader dr = cmd.ExecuteReader())
@@ -37,11 +50,11 @@ namespace Persistencia
                 {
                     Conta conta = new Conta()
                     {
-                        Id        = Convert.ToInt32(dr["ID"].ToString()),
-                        Descricao = dr["DESCRICAO"].ToString(),
-                        // Tipo      = Convert.ToChar(dr["TIPO"].ToString()),
-                        Tipo = 'R',
-                        Valor     = Convert.ToDouble(dr["VALOR"].ToString())
+                        Id             = Convert.ToInt32(dr["ID"].ToString()),
+                        Descricao      = dr["DESCRICAO"].ToString(),
+                        Tipo           = Convert.ToChar(dr["TIPO"].ToString()),
+                        DataVencimento = DateTime.Parse(dr["DATA_VENCIMENTO"].ToString()),
+                        Valor          = Convert.ToDouble(dr["VALOR"].ToString())
                     };
 
                     int id_categoria = Convert.ToInt32(dr["id"].ToString());
