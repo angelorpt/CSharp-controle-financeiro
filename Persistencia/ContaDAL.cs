@@ -56,5 +56,42 @@ namespace Persistencia
 
         }
 
+        public void Salvar(Conta conta)
+        {
+            if(conta.Id == null)
+            {
+                Cadastrar(conta);
+            } else
+            {
+                Editar(conta);
+            }
+        }
+
+        void Cadastrar(Conta conta)
+        {
+            this.conn.Open();
+            SqlCommand cmd = this.conn.CreateCommand();
+
+            string SQL;
+            SQL  = " INSERT INTO CONTAS (DESCRICAO, TIPO, VALOR, DATA_VENCIMENTO, CATEGORIA_ID) ";
+            SQL += " VALUES (@descricao, @tipo, @valor, @data_vencimento, @categoria_id) ";
+            cmd.CommandText = SQL;
+            
+            cmd.Parameters.AddWithValue("@descricao", conta.Descricao);
+            cmd.Parameters.AddWithValue("@tipo", conta.Tipo);
+            cmd.Parameters.AddWithValue("@valor", conta.Valor);
+            cmd.Parameters.AddWithValue("@data_vencimento", conta.DataVencimento);
+            cmd.Parameters.AddWithValue("@categoria_id", conta.categoria.Id);
+
+            cmd.ExecuteNonQuery();
+
+            this.conn.Close();
+        }
+
+        void Editar(Conta conta)
+        {
+
+        }
+
     }
 }
