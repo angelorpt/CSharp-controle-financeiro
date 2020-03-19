@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using Modelo;
 
@@ -33,6 +34,34 @@ namespace Persistencia
 
             this.conn.Close();
             return categoria;
+        }
+
+        public List<Categoria> ListarTodos()
+        {
+            List<Categoria> categorias = new List<Categoria>();
+
+            string SQL = "SELECT ID, NOME FROM CATEGORIAS";
+            SqlCommand cmd = new SqlCommand(SQL, this.conn);
+
+            this.conn.Open();
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Categoria categoria = new Categoria()
+                {
+                    Id   = Convert.ToInt32(dr["id"].ToString()),
+                    Nome = dr["nome"].ToString()
+                };
+
+                categorias.Add(categoria);
+
+            }
+
+            this.conn.Close();
+
+            return categorias;
         }
     }
 }
