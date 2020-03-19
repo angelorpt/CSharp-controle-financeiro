@@ -33,6 +33,7 @@ namespace ControleFinanceiro
             int opc;
 
             Program p = new Program();
+            ConsoleTable table;
 
             do
             {
@@ -58,15 +59,8 @@ namespace ControleFinanceiro
                             Title = "LISTAGEM DE CONTAS - CONTROLE FINANCEIRO";
                             Uteis.MontaHeader("LISTAGEM DE CONTAS");
 
-                            p.contas = p.conta.ListarTodos();
+                            ListarContas(p);
 
-                            ConsoleTable table = new ConsoleTable("ID", "Descrição", "Tipo", "Valor", "Data Vencimento");
-
-                            foreach (var c in p.contas)
-                            {
-                                table.AddRow(c.Id, c.Descricao, c.Tipo.Equals('R') ? "Receber" : "Pagar", string.Format("{0:c}", c.Valor), string.Format("{0:dd/MM/yyyy}", c.DataVencimento));
-                            }
-                            table.Write();
                             ReadLine();
                             Clear();
 
@@ -77,62 +71,7 @@ namespace ControleFinanceiro
                             Title = "NOVA CONTA - CONTROLE FINANCEIRO";
                             Uteis.MontaHeader("CADASTRAR NOVA CONTA");
 
-                            string desc = "";
-                            do
-                            {
-                                Write("Informe a descrição da conta: ");
-                                desc = ReadLine();
-
-                                if (desc.Equals(""))
-                                {
-                                    BackgroundColor = ConsoleColor.Red;
-                                    ForegroundColor = ConsoleColor.White;
-                                    Uteis.MontaHeader("INFORME UMA DESCRIÇÃO", '*', 30);
-                                    ResetColor();
-                                }
-
-                            } while (desc.Equals(""));
-
-                            Write("Valor: ");
-                            double valor = Convert.ToDouble(ReadLine());
-
-                            Write("Tipo: ");
-                            char tipo = Convert.ToChar(ReadLine());
-
-                            Write("Data Vencimento (dd/mm/aaaa): ");
-                            DateTime dataVencimento = DateTime.Parse(ReadLine());
-
-                            Write("Selecione uma categoria pleo ID: \n");
-                            p.categorias = p.categoria.ListarTodos();
-
-                            table = new ConsoleTable("ID", "NOME");
-                            
-                            foreach(Categoria categoria in p.categorias)
-                            {
-                                table.AddRow(categoria.Id, categoria.Nome);
-                            }
-                            table.Write();
-
-                            Write("Categoria: ");
-                            int categoria_id = Convert.ToInt32(ReadLine());
-
-                            Categoria categoria_cad = p.categoria.GetCategoria(categoria_id);
-
-                            Conta conta = new Conta()
-                            {
-                                Descricao = desc,
-                                Valor = valor,
-                                Tipo = tipo,
-                                DataVencimento = dataVencimento,
-                                categoria = categoria_cad,
-                            };
-
-                            p.conta.Salvar(conta);
-
-                            BackgroundColor = ConsoleColor.Green;
-                            ForegroundColor = ConsoleColor.White;
-                            Uteis.MontaHeader("CONTA SALVA COM SUCESSO", '+', 30);
-                            ResetColor();
+                            CadastrarConta(p);
 
                             ReadLine();
                             Clear();
@@ -165,16 +104,8 @@ namespace ControleFinanceiro
                             Write("Data Final (dd/mm/yyyy): ");
                             string data_final = ReadLine();
 
-                            p.contas = p.conta.ListarTodos(data_inicial, data_final);
-
-                            table = new ConsoleTable("ID", "Descrição", "Tipo", "Valor", "Data Vencimento");
-                            table = new ConsoleTable("ID", "Descrição", "Tipo", "Valor", "Data Vencimento");
-
-                            foreach (var c in p.contas)
-                            {
-                                table.AddRow(c.Id, c.Descricao, c.Tipo.Equals('R') ? "Receber" : "Pagar", string.Format("{0:c}", c.Valor), string.Format("{0:dd/MM/yyyy}", c.DataVencimento));
-                            }
-                            table.Write();
+                            ListarContas(p, data_inicial, data_final); 
+                            
                             ReadLine();
                             Clear();
                             break;
@@ -183,6 +114,80 @@ namespace ControleFinanceiro
 
             } while (opc != 6);
 
+        }
+        static void ListarContas(Program p, string data_inicial = "", string data_final = "")
+        {
+            p.contas = p.conta.ListarTodos(data_inicial, data_final);
+
+            ConsoleTable table;
+            table = new ConsoleTable("ID", "Descrição", "Tipo", "Valor", "Data Vencimento");
+
+            foreach (var c in p.contas)
+            {
+                table.AddRow(c.Id, c.Descricao, c.Tipo.Equals('R') ? "Receber" : "Pagar", string.Format("{0:c}", c.Valor), string.Format("{0:dd/MM/yyyy}", c.DataVencimento));
+            }
+            table.Write();
+        }
+
+        static void CadastrarConta(Program p)
+        {
+            ConsoleTable table;
+            string desc = "";
+            do
+            {
+                Write("Informe a descrição da conta: ");
+                desc = ReadLine();
+
+                if (desc.Equals(""))
+                {
+                    BackgroundColor = ConsoleColor.Red;
+                    ForegroundColor = ConsoleColor.White;
+                    Uteis.MontaHeader("INFORME UMA DESCRIÇÃO", '*', 30);
+                    ResetColor();
+                }
+
+            } while (desc.Equals(""));
+
+            Write("Valor: ");
+            double valor = Convert.ToDouble(ReadLine());
+
+            Write("Tipo: ");
+            char tipo = Convert.ToChar(ReadLine());
+
+            Write("Data Vencimento (dd/mm/aaaa): ");
+            DateTime dataVencimento = DateTime.Parse(ReadLine());
+
+            Write("Selecione uma categoria pleo ID: \n");
+            p.categorias = p.categoria.ListarTodos();
+
+            table = new ConsoleTable("ID", "NOME");
+
+            foreach (Categoria categoria in p.categorias)
+            {
+                table.AddRow(categoria.Id, categoria.Nome);
+            }
+            table.Write();
+
+            Write("Categoria: ");
+            int categoria_id = Convert.ToInt32(ReadLine());
+
+            Categoria categoria_cad = p.categoria.GetCategoria(categoria_id);
+
+            Conta conta = new Conta()
+            {
+                Descricao = desc,
+                Valor = valor,
+                Tipo = tipo,
+                DataVencimento = dataVencimento,
+                categoria = categoria_cad,
+            };
+
+            p.conta.Salvar(conta);
+
+            BackgroundColor = ConsoleColor.Green;
+            ForegroundColor = ConsoleColor.White;
+            Uteis.MontaHeader("CONTA SALVA COM SUCESSO", '+', 30);
+            ResetColor();
         }
     }
 }
