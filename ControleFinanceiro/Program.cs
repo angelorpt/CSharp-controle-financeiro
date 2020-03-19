@@ -159,8 +159,22 @@ namespace ControleFinanceiro
                             Title = "RELATÓRIO - CONTROLE FINANCEIRO";
                             Uteis.MontaHeader("RELATÓRIO");
 
+                            Write("Data Inicial (dd/mm/yyyy): ");
+                            string data_inicial = ReadLine();
 
+                            Write("Data Final (dd/mm/yyyy): ");
+                            string data_final = ReadLine();
 
+                            p.contas = p.conta.ListarTodos(data_inicial, data_final);
+
+                            table = new ConsoleTable("ID", "Descrição", "Tipo", "Valor", "Data Vencimento");
+                            table = new ConsoleTable("ID", "Descrição", "Tipo", "Valor", "Data Vencimento");
+
+                            foreach (var c in p.contas)
+                            {
+                                table.AddRow(c.Id, c.Descricao, c.Tipo.Equals('R') ? "Receber" : "Pagar", string.Format("{0:c}", c.Valor), string.Format("{0:dd/MM/yyyy}", c.DataVencimento));
+                            }
+                            table.Write();
                             ReadLine();
                             Clear();
                             break;
