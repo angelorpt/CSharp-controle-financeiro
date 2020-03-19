@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Modelo
 {
-    class Categoria
+    public class Categoria
     {
         private int _id;
         private string _nome;

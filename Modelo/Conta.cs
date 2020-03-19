@@ -2,7 +2,7 @@
 
 namespace Modelo
 {
-    class Conta
+    public class Conta
     {
         private int? _id;
         private string _descricao;
