@@ -16,5 +16,15 @@ C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug
 C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.csproj.CoreCompileInputs.cache
 C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.csproj.CopyComplete
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Db.exe
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Db.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Db.pdb
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Modelo.exe
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Modelo.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Modelo.pdb
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Persistencia.exe
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Persistencia.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\Persistencia.pdb
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\bin\Debug\netcoreapp3.1\PortableConsoleLibs.dll
+C:\Projects\Visual Studio\CSharp\ControleFinanceiro\ControleFinanceiro\obj\Debug\netcoreapp3.1\ControleFinanceiro.csproj.CoreCompileInputs.cache
