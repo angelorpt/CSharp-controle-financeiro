@@ -27,11 +27,10 @@ namespace Persistencia
             SQL.Append(" SELECT CON.ID, CON.DESCRICAO, CON.VALOR, CON.TIPO, CON.DATA_VENCIMENTO, CAT.NOME, CAT.ID AS CATEGORIA_ID ");
             SQL.Append(" FROM CONTAS CON ");
             SQL.Append(" INNER JOIN CATEGORIAS CAT ON CON.CATEGORIA_ID = CAT.ID");
-            
 
             if (!data_inicial.Equals("") && !data_final.Equals(""))
             {
-                SQL.Append(" CON.DATA_VENCIMENTO BETWEEN @data_ini AND @data_fim");
+                SQL.Append(" WHERE CON.DATA_VENCIMENTO BETWEEN @data_ini AND @data_fim");
             }
 
             var cmd = new SqlCommand(SQL.ToString(), this.conn);
